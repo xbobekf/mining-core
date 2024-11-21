@@ -3,6 +3,7 @@
 *.sln.docstates
 .vs/
 .vscode/
+config.json
 
 [Dd]ebug/
 [Rr]elease/
