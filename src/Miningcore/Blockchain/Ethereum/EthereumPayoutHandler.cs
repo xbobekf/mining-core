@@ -298,7 +298,7 @@ public class EthereumPayoutHandler : PayoutHandlerBase,
         // ensure we have peers
         var infoResponse = await rpcClient.ExecuteAsync<string>(logger, EC.GetPeerCount, ct);
 
-        if((networkType == EthereumNetworkType.Main || extraPoolConfig?.ChainTypeOverride == "Classic" || extraPoolConfig?.ChainTypeOverride == "Mordor" || networkType == EthereumNetworkType.MainPow || extraPoolConfig?.ChainTypeOverride == "Ubiq" || extraPoolConfig?.ChainTypeOverride == "EtherOne" || extraPoolConfig?.ChainTypeOverride == "Pink" || extraPoolConfig?.ChainTypeOverride == "JibChain" || extraPoolConfig?.ChainTypeOverride == "Altcoin" || extraPoolConfig?.ChainTypeOverride == "Pom" || extraPoolConfig?.ChainTypeOverride == "MaxxChain" || extraPoolConfig?.ChainTypeOverride == "Canxium" || extraPoolConfig?.ChainTypeOverride == "Rethereum" || extraPoolConfig?.ChainTypeOverride == "Bitnet" || extraPoolConfig?.ChainTypeOverride == "OctaSpace" || extraPoolConfig?.ChainTypeOverride == "RedeV2" || extraPoolConfig?.ChainTypeOverride == "EtherChain" || extraPoolConfig?.ChainTypeOverride == "EtherGem" || extraPoolConfig?.ChainTypeOverride == "PowBlocks" || extraPoolConfig?.ChainTypeOverride == "SlayerX") &&
+        if((networkType == EthereumNetworkType.Main || extraPoolConfig?.ChainTypeOverride == "Classic" || extraPoolConfig?.ChainTypeOverride == "Mordor" || networkType == EthereumNetworkType.MainPow || extraPoolConfig?.ChainTypeOverride == "Ubiq" || extraPoolConfig?.ChainTypeOverride == "EtherOne" || extraPoolConfig?.ChainTypeOverride == "Pink" || extraPoolConfig?.ChainTypeOverride == "JibChain" || extraPoolConfig?.ChainTypeOverride == "Altcoin" || extraPoolConfig?.ChainTypeOverride == "Pom" || extraPoolConfig?.ChainTypeOverride == "MaxxChain" || extraPoolConfig?.ChainTypeOverride == "Canxium" || extraPoolConfig?.ChainTypeOverride == "Rethereum" || extraPoolConfig?.ChainTypeOverride == "Bitnet" || extraPoolConfig?.ChainTypeOverride == "OctaSpace" || extraPoolConfig?.ChainTypeOverride == "RedeV2" || extraPoolConfig?.ChainTypeOverride == "EtherChain" || extraPoolConfig?.ChainTypeOverride == "EtherGem" || extraPoolConfig?.ChainTypeOverride == "PowBlocks" || extraPoolConfig?.ChainTypeOverride == "SlayerX" || extraPoolConfig?.ChainTypeOverride == "Zether") &&
            (infoResponse.Error != null || string.IsNullOrEmpty(infoResponse.Response) ||
                infoResponse.Response.IntegralFromHex<int>() < EthereumConstants.MinPayoutPeerCount))
         {
@@ -484,7 +484,25 @@ public class EthereumPayoutHandler : PayoutHandlerBase,
             	}
                	return XPBRewardInitial;
 
-			case GethChainType.SlayerX:
+			case GethChainType.Zether:
+				if(height >= ZetherConstants.HalvingHeight1)
+					return ZetherConstants.HalvingReward1 - (ZetherConstants.HalvingReward1 * (ZetherConstants.StakePercent / 100));
+
+                if(height >= ZetherConstants.HalvingHeight2)
+                    return ZetherConstants.HalvingReward2 - (ZetherConstants.HalvingReward2 * (ZetherConstants.StakePercent / 100));
+
+                if(height >= ZetherConstants.HalvingHeight3)
+                    return ZetherConstants.HalvingReward3 - (ZetherConstants.HalvingReward3 * (ZetherConstants.StakePercent / 100));
+
+                if(height >= ZetherConstants.HalvingHeight4)
+                    return ZetherConstants.HalvingReward4 - (ZetherConstants.HalvingReward4 * (ZetherConstants.StakePercent / 100));
+
+                if(height >= ZetherConstants.HalvingHeight5)
+                    return ZetherConstants.HalvingReward5 - (ZetherConstants.HalvingReward5 * (ZetherConstants.StakePercent / 100));
+
+                return ZetherConstants.BaseRewardInitial - (ZetherConstants.BaseRewardInitial * (ZetherConstants.StakePercent / 100));
+
+            case GethChainType.SlayerX:
 				if(height >= SlayerXConstants.HalvingHeight1)
 					return SlayerXConstants.HalvingReward1 - (SlayerXConstants.HalvingReward1 * (SlayerXConstants.StakePercent / 100));
 

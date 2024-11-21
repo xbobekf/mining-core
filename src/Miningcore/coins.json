@@ -6236,6 +6236,25 @@
         "explorerTxLink": "https://explorer.octa.space/tx/{0}",
         "explorerAccountLink": "https://explorer.octa.space/address/{0}"
     },
+    "zether": {
+        "name": "Zether",
+        "canonicalName": "Zether",
+        "symbol": "ZTH",
+        "family": "ethereum",
+        "ethasher": "ethash",
+        "website": "https://zether.org/",
+        "github": "",
+        "market": "https://coinmarketcap.com/currencies/zth/",
+        "twitter": "https://x.com/ZetherOrg",
+        "telegram": "https://t.me/ZetherOrg",
+        "discord": "https://discord.com/invite/rdvTu2Ks7S",
+        "explorerBlockLinks": {
+            "block": "https://zthscan.com/block/$height$",
+            "uncle": "https://zthscan.com/block/$hash$"
+        },
+        "explorerTxLink": "https://zthscan.com/tx/{0}",
+        "explorerAccountLink": "https://zthscan.com/address/{0}"
+    },
     "redev2": {
         "name": "RedeV2",
         "canonicalName": "RedeV2",

@@ -190,6 +190,22 @@ public class PowBlocksConstants
     public const decimal BaseRewardInitial = 9.0m;
 }
 
+public class ZetherConstants
+{
+    public const decimal BaseRewardInitial = 10.0m;
+    public const decimal HalvingReward1 = 9.0m;
+    public const decimal HalvingReward2 = 8.0m;
+    public const decimal HalvingReward3 = 7.0m;
+    public const decimal HalvingReward4 = 6.0m;
+    public const decimal HalvingReward5 = 5.0m;
+
+    public const ulong HalvingHeight1 = 100000;
+    public const ulong HalvingHeight2 = 200000;
+    public const ulong HalvingHeight3 = 300000;
+    public const ulong HalvingHeight4 = 400000;
+    public const ulong HalvingHeight5 = 500000;
+}
+
 public class SlayerXConstants
 {
     public const decimal BaseRewardInitial = 60.0m;
@@ -232,6 +248,7 @@ public enum EthereumNetworkType
     PowBlocks = 12300,
     SlayerX = 1,
     Hypra = 622277,
+    Zether = 715131,
 
     Unknown = -1,
 }
@@ -261,6 +278,7 @@ public enum GethChainType
     PowBlocks = 12300,
     SlayerX = 9119,
     Hypra,
+    Zether = 715131,
     
     Unknown = -1,
 }
