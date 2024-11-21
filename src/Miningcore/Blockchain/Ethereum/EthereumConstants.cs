@@ -198,7 +198,8 @@ public class ZetherConstants
     public const decimal HalvingReward3 = 7.0m;
     public const decimal HalvingReward4 = 6.0m;
     public const decimal HalvingReward5 = 5.0m;
-
+    public const decimal StakePercent = 5m;
+    
     public const ulong HalvingHeight1 = 100000;
     public const ulong HalvingHeight2 = 200000;
     public const ulong HalvingHeight3 = 300000;
