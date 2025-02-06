@@ -6361,6 +6361,19 @@
         "explorerTxLink": "https://explorer.alephium.org/transactions/{0}",
         "explorerAccountLink": "https://explorer.alephium.org/addresses/{0}"
     },
+    "oxygenium": {
+        "name": "Oxygenium",
+        "canonicalName": "Oxygenium",
+        "symbol": "OXYG",
+        "family": "alephium",
+        "website": "https://oxygenium.org/",
+        "market": "https://coinmarketcap.com/currencies/oxygenium/",
+        "twitter": "https://twitter.com/oxygenium",
+        "telegram": "https://t.me/oxygenium",
+        "explorerBlockLink": "https://explorer.oxygenium-network.org/blocks/$hash$",
+        "explorerTxLink": "https://explorer.oxygenium-network.org/transactions/{0}",
+        "explorerAccountLink": "https://explorer.oxygenium-network.org/addresses/{0}"
+    },
     "ergo": {
         "name": "Ergo",
         "canonicalName": "Ergo",
